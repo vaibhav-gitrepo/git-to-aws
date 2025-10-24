@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Manager</h1>
+        <form method="POST" action="/add">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phone" placeholder="Phone" required>
+            <button type="submit">Add Contact</button>
+        </form>
+
+        <h2>Saved Contacts</h2>
+        <ul>
+            {% for user in users %}
+            <li>
+                {{ user[1] }} | {{ user[2] }} | {{ user[3] }}
+                <form method="POST" action="/delete/{{ user[0] }}" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
