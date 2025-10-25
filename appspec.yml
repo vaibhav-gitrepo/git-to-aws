@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/flask-app
+    destination: /home/ec2-user/PROJECT-GIT-TO-AWS
 hooks:
   BeforeInstall:
     - location: scripts/stop_server.sh
@@ -20,7 +20,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/flask-app
+    destination: /home/ec2-user/
 hooks:
   BeforeInstall:
     - location: scripts/stop_server.sh
